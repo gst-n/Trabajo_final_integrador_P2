@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * @author gast-n
  */
 public class DatabaseConnection {
-    private static final String URL = System.getProperty("db.url", "jdbc:mysql://localhost:3306/TPFI_BaseDeDatos");
+    private static final String URL = System.getProperty("db.url", "jdbc:mysql://localhost:3307/TPFI_BaseDeDatos");
     private static final String USER = System.getProperty("db.user", "root");
     private static final String PASSWORD = System.getProperty("db.password", "");
 
