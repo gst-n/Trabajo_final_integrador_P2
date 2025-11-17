@@ -70,7 +70,6 @@ public class AppMenuMain {
             case 2 -> menuHandler.listarProductos();
             case 3 -> menuHandler.actualizarProducto();
             case 4 -> menuHandler.eliminarProducto();
-            case 5 -> menuHandler.crearCodigoBarrasIndependiente();
             case 6 -> menuHandler.listarCodigoBarras();
             case 7 -> menuHandler.actualizarCodigoPorId();
             case 8 -> menuHandler.eliminarCodigoBarrasPorId();

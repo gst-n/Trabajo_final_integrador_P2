@@ -4,7 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/gast-n/NetBeansProjects/TrabajoFinalP2/src/Main/AppMenuMain.java</file>
-            <file>file:/home/gast-n/NetBeansProjects/TrabajoFinalP2/src/Dao/ProductoDAO.java</file>
+            <file>file:/home/gast-n/NetBeansProjects/TrabajoFinalP2/src/Main/MenuHandlerMain.java</file>
+            <file>file:/home/gast-n/NetBeansProjects/TrabajoFinalP2/src/Service/ProductoServiceImpl.java</file>
         </group>
     </open-files>
 </project-private>

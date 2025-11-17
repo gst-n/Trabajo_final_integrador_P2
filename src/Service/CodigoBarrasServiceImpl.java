@@ -72,4 +72,9 @@ public class CodigoBarrasServiceImpl implements GenericService<CodigoBarras> {
         }
     }
     
+    public void insertTx(CodigoBarras codigoBarras, java.sql.Connection conn) throws Exception {
+    validateCodigoBarras(codigoBarras);
+    codigoBarrasDAO.insertTx(codigoBarras, conn); 
+}
+    
 }

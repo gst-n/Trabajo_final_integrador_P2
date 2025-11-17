@@ -26,10 +26,8 @@ public class CodigoBarrasDAO implements GenericDAO<CodigoBarras> {
     private static final String UPDATE_SQL = "UPDATE CodigoBarras SET tipo = ?, fechaAsignacion = ?, observaciones = ?, producto_id = ? WHERE id = ?";
     private static final String DELETE_SQL = "UPDATE codigosBarras SET eliminado = TRUE WHERE id = ?";
 
-    private static final String SELECT_BY_ID_SQL = "SELECT * FROM codigos_barras WHERE id = ? AND eliminado = FALSE";
-
-    private static final String SELECT_ALL_SQL = "SELECT * FROM codigos_barras WHERE eliminado = FALSE";
-
+    private static final String SELECT_BY_ID_SQL = "SELECT id, tipo, fechaAsignacion, observaciones, eliminado, producto_id FROM CodigoBarras WHERE id = ? AND eliminado = FALSE";
+    private static final String SELECT_ALL_SQL = "SELECT id, tipo, fechaAsignacion, observaciones, eliminado, producto_id FROM CodigoBarras WHERE eliminado = FALSE";
     // --- Implementación de GenericDAO<CodigoBarras> ---
 
     @Override
@@ -118,8 +116,14 @@ private void setCodigoBarrasParameters(PreparedStatement stmt, CodigoBarras codi
     stmt.setString(1, codigoBarras.getTipo());
     stmt.setTimestamp(2, new java.sql.Timestamp(codigoBarras.getFechaAsignacion().getTime()));
     stmt.setString(3, codigoBarras.getObservaciones());
-    stmt.setInt(4, codigoBarras.getProductoId());
+    //stmt.setInt(4, codigoBarras.getProductoId());
+    if (codigoBarras.getProductoId() > 0) {
+        stmt.setInt(4, codigoBarras.getProductoId()); 
+    } else {
+        stmt.setNull(4, java.sql.Types.INTEGER); 
+    }
 }
+    
 
     /**
      * Obtiene el ID autogenerado por la BD después de un INSERT.
@@ -142,11 +146,13 @@ private void setCodigoBarrasParameters(PreparedStatement stmt, CodigoBarras codi
         // Se utiliza el constructor de CodigoBarras(String tipo, String observaciones, int id, boolean eliminado)
         // proporcionado en CodigoBarras.java.
         // Se asume que la BD tiene una columna 'eliminado' (BOOLEAN) y 'fecha_asignacion' (TIMESTAMP/DATETIME).
-        return new CodigoBarras(
+        CodigoBarras cb = new CodigoBarras(
             rs.getString("tipo"),
             rs.getString("observaciones"),
             rs.getInt("id"),
             rs.getBoolean("eliminado")
         );
+        cb.setProductoId(rs.getInt("producto_id")); 
+        return cb;
     }
 }

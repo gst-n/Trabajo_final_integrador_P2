@@ -19,12 +19,16 @@ public class CodigoBarras extends Base {
     public CodigoBarras(String tipo, String observaciones, int id, boolean eliminado) {
         super(id, eliminado);
         this.tipo = tipo;
-        this.observaciones = observaciones;
+        this.observaciones = observaciones; 
     }
     
+    
     public CodigoBarras(String tipo, Date fecha, String observaciones){
-        super();
-    }
+    super();
+    this.tipo = tipo;
+    this.fechaAsignacion = fecha;
+    this.observaciones = observaciones;
+}
 
     public int getProductoId() {
         return id;

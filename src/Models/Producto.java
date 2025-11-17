@@ -93,6 +93,7 @@ public class Producto extends Base {
 
     /**
      * Obtiene el código de barras asociado. (Soluciona el error en ProductoDAO)
+     * @return 
      */
     public CodigoBarras getCodigoBarras() {
         return codigoBarras;
@@ -100,6 +101,7 @@ public class Producto extends Base {
 
     /**
      * Asocia o desasocia un código de barras al producto.
+     * @param codigoBarras
      */
     public void setCodigoBarras(CodigoBarras codigoBarras) {
         this.codigoBarras = codigoBarras;

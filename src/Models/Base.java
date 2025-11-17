@@ -11,7 +11,6 @@ package Models;
 public class Base {
 
     int id;
-
     private boolean eliminado;
 
     /**
