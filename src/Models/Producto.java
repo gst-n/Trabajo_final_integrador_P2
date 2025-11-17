@@ -29,6 +29,11 @@ public class Producto extends Base {
     /**
      * Constructor completo para reconstruir un Producto desde la BD.
      * Usado por ProductoDAO al mapear ResultSet.
+     * @param id
+     * @param nombre
+     * @param marca
+     * @param categoria
+     * @param precio
      */
     public Producto(int id, String nombre, String marca, String categoria, double precio) {
         super(id, false);
@@ -42,6 +47,15 @@ public class Producto extends Base {
     public Producto() {
         super();
     }
+
+    public Producto(String nombre, String marca, String categoria, double precio) {
+        this.nombre = nombre;
+        this.marca = marca;
+        this.categoria = categoria;
+        this.precio = precio;
+    }
+    
+    
 
     // --- Getters y Setters ---
 

@@ -21,12 +21,13 @@ public class CodigoBarras extends Base {
         this.tipo = tipo;
         this.observaciones = observaciones;
     }
-
-    public CodigoBarras(String tipo, String observaciones) {
+    
+    public CodigoBarras(String tipo, Date fecha, String observaciones){
         super();
     }
 
-    public CodigoBarras() {
+    public int getProductoId() {
+        return id;
     }
     
     
@@ -54,6 +55,12 @@ public class CodigoBarras extends Base {
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
+
+    public void setProductoId(int id) {
+        this.id = id;
+    }
+    
+    
 
     @Override
     public String toString() {

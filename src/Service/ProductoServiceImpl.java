@@ -16,7 +16,12 @@ public class ProductoServiceImpl implements GenericService<Producto>{
     
     private final CodigoBarrasServiceImpl codigoBarrasServiceImpl;
     private final ProductoDAO productoDAO;
-
+    
+    /**
+     * @param productoDAO DAO de productos 
+     * @param codigoBarrasServiceImpl  Servicio de Codigo barras
+     * @throws IllegalArgumentException si alguna dependencia es null
+     */
     public ProductoServiceImpl(ProductoDAO productoDAO, CodigoBarrasServiceImpl codigoBarrasServiceImpl) {
         if (productoDAO == null){
             throw new IllegalArgumentException("ProductoDAO no puede ser NULL");
@@ -24,6 +29,11 @@ public class ProductoServiceImpl implements GenericService<Producto>{
         this.productoDAO = productoDAO;
         this.codigoBarrasServiceImpl = codigoBarrasServiceImpl;
     }
+    
+    /**
+     * @param producto Producto a insertar (id será ignorado y regenerado)
+     * @throws Exception 
+     */
 
     @Override
     public void insertar(Producto producto) throws Exception {
@@ -96,7 +106,11 @@ public class ProductoServiceImpl implements GenericService<Producto>{
             }
         }
     }
-    
+
+    /**
+     *
+     * @return
+     */
     public CodigoBarrasServiceImpl getCodigoBarrasService(){
         return this.codigoBarrasServiceImpl;
     }
