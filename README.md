@@ -1,6 +1,7 @@
 ---
 
-# Título de la nota
+# Trabajo Final Integrador - Programacion II
+## Create, Read, Update, Delete (Producto - CodigoBarras)
 
 ---
 ---
@@ -21,3 +22,5 @@ Para la conexión entre JAVA y la base de datos se incluyo a la libreria mysql-c
 
 *El código fuente de la creación de la base de datos se incluirá en el repositorio al final de este documento, junto con otros archivos de interés *
 A continuación, el video donde se muestra la funcionalidad del codigo:
+https://www.youtube.com/watch?v=EW0wCN9sxzg
+Repositorio en Github: https://github.com/gst-n/Trabajo_final_integrador_P2

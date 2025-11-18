@@ -48,14 +48,14 @@ public class MenuHandlerMain {
             System.out.println("Precio: ");
             double precio = Integer.parseInt(scanner.nextLine().trim());
 
-            CodigoBarras codigoBarras = null;
-            System.out.println("¿Quiere ingresar un codigo de barras? ingrese s para ingresar uno, o n para continuar: ");
-            if (scanner.nextLine().equalsIgnoreCase("s")){
-                codigoBarras = crearCodigoBarras();
-            }
+//            CodigoBarras codigoBarras = null;
+//            System.out.println("¿Quiere ingresar un codigo de barras? ingrese s para ingresar uno, o n para continuar: ");
+//            if (scanner.nextLine().equalsIgnoreCase("s")){
+//                codigoBarras = crearCodigoBarras();
+//            }
 
             Producto producto = new Producto(nombre, marca, categoria, precio);
-            producto.setCodigoBarras(codigoBarras);
+//            producto.setCodigoBarras(codigoBarras);
             productoServiceImpl.insertar(producto);
             System.out.println("Producto creado correctamente");
         }
